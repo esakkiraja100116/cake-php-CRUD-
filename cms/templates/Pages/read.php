@@ -16,15 +16,7 @@
     </div>
   </div>
 </div>
-<?php
-if (isset($_SESSION['deleted'])) {
-    ?>
-<div class="alert alert-success" role="alert">
-  User deleted successfully
-</div>
-<?php
-}
-?>
+
 <table class="table">
   <thead>
     <tr>

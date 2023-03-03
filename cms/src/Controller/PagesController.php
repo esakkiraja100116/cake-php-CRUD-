@@ -48,6 +48,13 @@ class PagesController extends AppController
 
     public function display(string ...$path): ?Response
     {
+        $session = $this->request->getSession();
+         $check = $session->read('login');
+         if($check != "success"){
+            return $this->redirect(
+               ['controller' => 'Users', 'action' => 'sign_in']
+            );
+         }
 
         $connection = ConnectionManager::get('default');
         $results = $connection->execute('SELECT * FROM users_temp')->fetchAll('assoc');

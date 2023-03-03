@@ -15,6 +15,7 @@
  */
 
 $cakeDescription = 'CRUD - operation';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,10 +42,9 @@ $cakeDescription = 'CRUD - operation';
     <script>
 
         // $(document).ready(function(){
-        //     alert("1");
-        //     $("p").click(function(){
-        //     $(this).hide();
-        // });
+        //     $(".alert-primary").hide(3000);
+        //     $(".alert-success").hide(3000);
+        // }); 
 
         // $("p").dblclick(function(){
         //     $(this).hide();
@@ -60,17 +60,42 @@ $cakeDescription = 'CRUD - operation';
 
 </head>
 <body>
+    <?php
+    $session = $this->request->getSession();
+    $check = $session->read('login');
+    if ($check == "success") {
+        ?>
+    
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Table</span>view</a>
+            <a href="<?= $this->Url->build('/users/view') ?>"><span>Home</span>Page</a>
         </div>
         <div class="top-nav-links">
             <a rel="noopener" href="<?= $this->Url->build('/users/view') ?>">Main</a>
             <a rel="noopener" href="<?= $this->Url->build('/users/add') ?>">Create</a>
+            <a rel="noopener" href="<?= $this->Url->build('/users/about_us') ?>">About us</a>
             <a rel="noopener" href="<?= $this->Url->build('/users/logout') ?>">Logout</a>
+            <a rel="noopener" href="<?= $this->Url->build('/users/profile') ?>"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg></a>
         </div>
+      
     </nav>
-    <main class="main">
+    <?php
+}else{
+?>
+ <nav class="top-nav">
+        <div class="top-nav-title">
+            <a href="<?= $this->Url->build('/') ?>"><span>Admin</span>Login</a>
+        </div>
+        
+      
+    </nav>
+<?php
+}
+    ?>
+    <main class="main mt-3">
         <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
@@ -79,7 +104,13 @@ $cakeDescription = 'CRUD - operation';
     <footer>
     </footer>
    
-    
+    <script>
+
+        $(document).ready(function(){
+            // $(".alert-primary").hide('slow');
+            // $(".alert-success").hide('slow');
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

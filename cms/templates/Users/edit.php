@@ -22,8 +22,8 @@
 <?php
    }
    echo $this->Form->create(NULL,array('url'=>'/users/edit/'.$id));
-   echo $this->Form->control('username',['id' => 'username','value' => $username]);
-   echo $this->Form->control('password',['placeholder' => 'Enter the new password','value' => '']);
+   echo $this->Form->control('username',['id' => 'username','value' => $username],'required');
+   echo $this->Form->control('password',['placeholder' => 'Enter the new password','value' => '','required']);
    echo $this->Form->button('Update');
    echo $this->Form->button('Reset the Form', ['type' => 'reset','class' => 'reset_form']);
    echo $this->Form->end();

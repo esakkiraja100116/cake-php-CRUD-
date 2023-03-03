@@ -19,8 +19,8 @@
     }
    }
    echo $this->Form->create(NULL,array('url'=>'/users/add'));
-   echo $this->Form->control('username',['id' => 'username','value' => '']);
-   echo $this->Form->control('password',['value' => '']);
+   echo $this->Form->control('username',['id' => 'username','value' => '','required']);
+   echo $this->Form->control('password',['value' => '','required']);
    echo $this->Form->button('Submit');
    echo $this->Form->button('Reset the Form', ['type' => 'reset','class' => 'reset_form']);
    echo $this->Form->end();

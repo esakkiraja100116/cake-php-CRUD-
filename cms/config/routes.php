@@ -52,12 +52,14 @@ return static function (RouteBuilder $routes) {
          */
 
         $builder->connect('/', ['controller' => 'Users', 'action' => 'sign_in']);
-        $builder->connect('/register', ['controller' => 'Users', 'action' => 'display', 'register']);
+        $builder->connect('/register', ['controller' => 'Users', 'action' => 'register']);
 
         $builder->connect('/users/add', ['controller' => 'Users', 'action' => 'add']);
         $builder->connect('/users/edit', ['controller' => 'Users', 'action' => 'edit']);
         $builder->connect('/users/view', ['controller' => 'Pages', 'action' => 'display', 'read']);
         $builder->connect('/users/delete', ['controller' => 'Users', 'action' => 'delete']);
+
+        $builder->connect('/users/about_us', ['controller' => 'Users', 'action' => 'about_us']);
         
         
         /*
