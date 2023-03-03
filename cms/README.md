@@ -51,3 +51,7 @@ Other environment agnostic settings can be changed in `config/app.php`.
 The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
 framework by default. You can, however, replace it with any other library or
 custom styles.
+
+## Documentation link
+[CakePHP](https://docs.google.com/document/d/15L3Hujk8dy4c9bzj6x37YA8fz-AJZ3BZTGnBpickWTg/edit?usp=sharing)
+ 
